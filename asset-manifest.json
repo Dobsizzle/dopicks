@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dopicks/static/css/main.0993e593.css",
+    "main.js": "/dopicks/static/js/main.f62b46ee.js",
+    "index.html": "/dopicks/index.html",
+    "main.0993e593.css.map": "/dopicks/static/css/main.0993e593.css.map",
+    "main.f62b46ee.js.map": "/dopicks/static/js/main.f62b46ee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0993e593.css",
+    "static/js/main.f62b46ee.js"
+  ]
+}
