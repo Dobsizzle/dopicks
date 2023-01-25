@@ -1,13 +1,247 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+p,
+span {
+  margin: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  font-size: 16px;
+}
+
+.adminButton {
+  display: inline-block;
+  margin: 0 2px;
+  width: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.mainContentBox {
+  margin-top: 5px;
+}
+.rotating_football {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  left: calc(50% - 75px);
+  margin: 30px 0;
+
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.addGameButton {
+  margin-top: 40px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  line-height: 0;
+  width: 134px;
+  height: 134px;
+  padding-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.gameCard {
+  width: 291px;
+  height: 169px;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+.gameTimeP {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  background-color: rgba(230, 230, 230, 0.8);
+  border-radius: 5px;
+  padding: 2px;
+  z-index: 6;
+}
+
+.atSymbol {
+  display: inline-block;
+  vertical-align: top;
+  margin: 50px 3px 0 3px;
+  background-color: rgba(230, 230, 230, 0.6);
+  border-radius: 50%;
+  padding: 0 3px 2px 3px;
+  z-index: 6;
+}
+
+.teamCard {
+  padding: 10px;
+  display: inline-block;
+  height: 110px;
+  width: 110px;
+  top: 5px;
+  left: 5px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 20px;
+  background-color: black;
+  cursor: pointer;
+  transition: width 0.15s, height 0.15s, top 0.15s, left 0.15s, box-shadow .2s, filter .2s;
+  z-index: 4;
+}
+.teamCardBig {
+  height: 120px;
+  width: 120px;
+  top: 0px;
+  filter: none;
+  z-index: 5;
+}
+.teamCardBigLeft {
+  left: 20px;
+}
+.teamCardBigRight {
+  left: -20px;
+}
+.teamCardSmall {
+  height: 100px;
+  width: 100px;
+  top: 10px;
+  filter: grayscale(75%);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.teamCardSmallLeft {
+  left: 40px;
+}
+.teamCardSmallRight {
+  left: -20px;
+}
+.teamCardContainer {
+  vertical-align: top;
+  text-align: initial;
+  height: 120px;
+  width: 120px;
+  display: inline-block;
+  position: relative;
+}
+
+.teamText {
+  text-align: center;
+  margin: 0px;
+  width: calc(100% + 20px);
+  position: absolute;
+  left: -10px;
+  font-size: 14px;
+  transition: font-size 0.3s;
+}
+
+.modalDialogBackground {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 11;
+}
+
+.popupDialog {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  width: 310px;
+  z-index: 11;
+  position: fixed;
+  top: 5vh;
+  max-height: 90vh;
+  overflow: auto;
+  left: calc(50% - 155px);
+  box-sizing: border-box;
+}
+
+.standardButton {
+  display: inline-block;
+  padding: 5px 10px;
+  background: linear-gradient(to bottom right, rgb(84, 200, 255), rgb(0, 74, 190));
+  border: 1px solid rgb(62, 109, 117);
+  color: white;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+.standardButton:hover {
+  background: linear-gradient(to bottom right, rgb(101, 216, 255), rgb(26, 92, 197));
+}
+
+.clickableUsername {
+  display: inline-block;
+  color: blue;
+  cursor: pointer;
+}
+
+.allUsersPicksUsernameLabel {
+  font-size: 12px;
+  box-sizing: border-box;
+  display: flex;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: right;
+  padding-right: 5px;
+  align-items: center;
+  position: relative;
+}
+
+.centeredAndScaledBGImg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.eliminatedPlayerGradient {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(35, 35, 35, 0.7) 0px,
+    rgba(35, 35, 35, 0.7) 12.727922px,
+    rgba(0, 0, 0, 0.7) 12.727922px,
+    rgba(0, 0, 0, 0.7) 25.455844px
+  );
+  pointer-events: none;
 }
